@@ -62,3 +62,5 @@ C:\Ann\Scripts\TelephoneDirectory\bin\Debug\net7.0\Humanizer.dll
 C:\Ann\Scripts\TelephoneDirectory\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Ann\Scripts\TelephoneDirectory\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Ann\Scripts\TelephoneDirectory\bin\Debug\net7.0\System.CodeDom.dll
+C:\Ann\Scripts\TelephoneDirectory\obj\Debug\net7.0\TelephoneDirectory.RazorAssemblyInfo.cache
+C:\Ann\Scripts\TelephoneDirectory\obj\Debug\net7.0\TelephoneDirectory.RazorAssemblyInfo.cs

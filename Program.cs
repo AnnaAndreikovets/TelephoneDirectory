@@ -19,4 +19,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+using(var scope = app.Services.CreateScope())
+{
+    ApplicationDbContext content = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>()!;
+
+    DbObjects.Initial(content);
+}
+
 app.Run();

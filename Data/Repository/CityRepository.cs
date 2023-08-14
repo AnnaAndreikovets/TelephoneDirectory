@@ -12,9 +12,9 @@ namespace TelephoneDirectory.Data.Repository
             this.context = context;
         }
 
-        public City GetCity(int id)
+        public City Get(int id)
         {
-            City? city = context.City.FirstOrDefault(c => c.Id == id);
+            City? city = context.City.FirstOrDefault(c => c.Id.CompareTo(id) == 0);
 
             if(city is null)
             {

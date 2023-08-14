@@ -4,6 +4,6 @@ namespace TelephoneDirectory.Data.Interfaces
 {
     public interface ICity
     {
-        public City GetCity(int id);
+        public City Get(int id);
     }
 }

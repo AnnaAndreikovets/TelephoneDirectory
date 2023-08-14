@@ -15,8 +15,7 @@ namespace TelephoneDirectory.Migrations
                 name: "City",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CityName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -28,18 +27,18 @@ namespace TelephoneDirectory.Migrations
                 name: "Person",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PersonId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Phone = table.Column<string>(type: "TEXT", nullable: false),
                     Surname = table.Column<string>(type: "TEXT", nullable: false),
                     Initials = table.Column<string>(type: "TEXT", nullable: false),
                     House = table.Column<int>(type: "INTEGER", nullable: false),
                     Building = table.Column<int>(type: "INTEGER", nullable: true),
                     Flat = table.Column<int>(type: "INTEGER", nullable: true),
-                    CityId = table.Column<int>(type: "INTEGER", nullable: false)
+                    CityId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Person", x => x.Id);
+                    table.PrimaryKey("PK_Person", x => x.PersonId);
                     table.ForeignKey(
                         name: "FK_Person_City_CityId",
                         column: x => x.CityId,

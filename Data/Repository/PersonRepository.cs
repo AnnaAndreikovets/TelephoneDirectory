@@ -15,9 +15,9 @@ namespace TelephoneDirectory.Data.Repository
             this.city = city;
         }
 
-        public async Task AddPerson(string phone, string surname, string initials, int house, int? building, int? flat, int cityId)
+        public async Task Add(string phone, string surname, string initials, int house, int? building, int? flat, int cityId)
         {
-            City city_ = city.GetCity(cityId);
+            City city_ = city.Get(cityId);
 
             Person person = new Person() {Phone = phone, Surname = surname, Initials = initials, House = house, Building = building, Flat = flat, City = city_};
 
@@ -26,18 +26,18 @@ namespace TelephoneDirectory.Data.Repository
             await context.SaveChangesAsync();
         }
 
-        public async Task DeletePerson(Guid id)
+        public async Task Delete(Guid id)
         {
-            Person person = GetPerson(id);
+            Person person = Get(id);
 
             context.Person.Remove(person);
 
             await context.SaveChangesAsync();
         }
 
-        public Person GetPerson(Guid id)
+        public Person Get(Guid id)
         {
-            Person? person = context.Person.FirstOrDefault(p => p.Id.CompareTo(id) == 0);
+            Person? person = context.Person.FirstOrDefault(p => p.PersonId.CompareTo(id) == 0);
 
             if(person is null)
             {
@@ -47,13 +47,13 @@ namespace TelephoneDirectory.Data.Repository
             return person;
         }
 
-        public async Task UpdatePerson(Guid id, string phone, string surname, string initials, int house, int? building, int? flat, int cityId)
+        public async Task Update(Guid id, string phone, string surname, string initials, int house, int? building, int? flat, int cityId)
         {
-            Person person = GetPerson(id);
+            Person person = Get(id);
             
             context.Entry(person).State = EntityState.Modified;
 
-            City city_ = city.GetCity(cityId);
+            City city_ = city.Get(cityId);
 
             person.Phone = phone;
             person.Surname = surname;

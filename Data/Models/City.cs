@@ -4,9 +4,8 @@ namespace TelephoneDirectory.Data.Models
 {
     public class City
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
         [BindRequired]
-        public int Id { get; set; }
-        [BindRequired]
-        public string CityName { get; set; } = null!;
+        public string Name { get; set; } = null!;
     }
 }

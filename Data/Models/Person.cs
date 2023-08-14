@@ -5,7 +5,7 @@ namespace TelephoneDirectory.Data.Models
 {
     public class Person
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid PersonId { get; set; } = Guid.NewGuid();
         [BindRequired]
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; } = null!;

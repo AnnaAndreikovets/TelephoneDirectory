@@ -19,9 +19,9 @@ namespace TelephoneDirectory.Migrations
 
             modelBuilder.Entity("TelephoneDirectory.Data.Models.City", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CityName")
                         .IsRequired()
@@ -34,15 +34,15 @@ namespace TelephoneDirectory.Migrations
 
             modelBuilder.Entity("TelephoneDirectory.Data.Models.Person", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("PersonId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("Building")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CityId")
-                        .HasColumnType("INTEGER");
+                    b.Property<Guid>("CityId")
+                        .HasColumnType("TEXT");
 
                     b.Property<int?>("Flat")
                         .HasColumnType("INTEGER");
@@ -62,7 +62,7 @@ namespace TelephoneDirectory.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("PersonId");
 
                     b.HasIndex("CityId");
 
