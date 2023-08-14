@@ -29,7 +29,7 @@ namespace TelephoneDirectory.Data
             {
                 context.Person.AddRange(new List<Person>()
                 {
-                    new Person() { Phone = "+77252525252", Surname = "Senov", Initials = "S.S.", House = 13, Building = 2, Flat = 23, City = cities[14] },
+                    new Person() { Phone = "+77252525252", Surname = "Senov", Initials = "S.S.", House = 13, Building = 2, Flat = 23, City = cities[13] },
                     new Person() { Phone = "+77212121212", Surname = "Abdirov ", Initials = "A.A.", House = 15, Flat = 22, City = cities[13] },
                     new Person() { Phone = "+77222222211", Surname = "Zhumabekov ", Initials = "Z.Z.", House = 15, Building = 1, Flat = 10, City = cities[0] },
                     new Person() { Phone = "+77222222222", Surname = "Zhumabekov ", Initials = "A.Z.", House = 15, Building = 1, Flat = 10, City = cities[0] },
@@ -44,7 +44,7 @@ namespace TelephoneDirectory.Data
                     new Person() { Phone = "+77055555555", Surname = "Mukhtarov", Initials = "M.M.", House = 5, City = cities[4] },
                     new Person() { Phone = "+77066666666", Surname = "Madegeriev", Initials = "M.M.", House = 6, City = cities[5] },
                     new Person() { Phone = "+77098989898", Surname = "Zhanserik", Initials = "Z.Z.", House = 50, City = cities[12] },
-                    new Person() { Phone = "+77077777777", Surname = "Orazbayev", Initials = "O.O.", House = 58, Flat = 35, City = cities[15] },
+                    new Person() { Phone = "+77077777777", Surname = "Orazbayev", Initials = "O.O.", House = 58, Flat = 35, City = cities[9] },
                     new Person() { Phone = "+77088888888", Surname = "Akhmetov", Initials = "A.A.", House = 29, Building = 6, Flat = 23, City = cities[14] },
                     new Person() { Phone = "+77099999999", Surname = "Beisebekov", Initials = "B.P.", House = 83, Building = 2, Flat = 45, City = cities[13] },
                     new Person() { Phone = "+77101010101", Surname = "Kuanyshev", Initials = "I.K.", House = 24, Building = 3, Flat = 23, City = cities[12] },
