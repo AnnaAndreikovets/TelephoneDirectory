@@ -6,21 +6,21 @@ namespace TelephoneDirectory.Data
     {
         static List<City> cities = new List<City>()
         {
-            new City() {CityName = "Almaty"},
-            new City() {CityName = "Nur-Sultan"},
-            new City() {CityName = "Shymkent"},
-            new City() {CityName = "Karaganda"},
-            new City() {CityName = "Aktobe"},
-            new City() {CityName = "Taraz"},
-            new City() {CityName = "Pavlodar"},
-            new City() {CityName = "Ust-Kamenogorsk"},
-            new City() {CityName = "Semey"},
-            new City() {CityName = "Oral"},
-            new City() {CityName = "Kostanay"},
-            new City() {CityName = "Kyzylorda"},
-            new City() {CityName = "Petropavl"},
-            new City() {CityName = "Atyrau"},
-            new City() {CityName = "Temirtau"},
+            new City() {Id = 0, CityName = "Almaty"},
+            new City() {Id = 1, CityName = "Nur-Sultan"},
+            new City() {Id = 2, CityName = "Shymkent"},
+            new City() {Id = 3, CityName = "Karaganda"},
+            new City() {Id = 4, CityName = "Aktobe"},
+            new City() {Id = 5, CityName = "Taraz"},
+            new City() {Id = 6, CityName = "Pavlodar"},
+            new City() {Id = 7, CityName = "Ust-Kamenogorsk"},
+            new City() {Id = 8, CityName = "Semey"},
+            new City() {Id = 9, CityName = "Oral"},
+            new City() {Id = 10, CityName = "Kostanay"},
+            new City() {Id = 11, CityName = "Kyzylorda"},
+            new City() {Id = 12, CityName = "Petropavl"},
+            new City() {Id = 13, CityName = "Atyrau"},
+            new City() {Id = 14, CityName = "Temirtau"},
         };
 
         public static void Initial(ApplicationDbContext context)

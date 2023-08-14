@@ -5,9 +5,23 @@ namespace TelephoneDirectory.Data.Repository
 {
     public class CityRepository : ICity
     {
-        public City GetCity(int index)
+        readonly ApplicationDbContext context;
+
+        public CityRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+        }
+
+        public City GetCity(int id)
+        {
+            City? city = context.City.FirstOrDefault(c => c.Id == id);
+
+            if(city is null)
+            {
+                throw new ArgumentNullException("Wrong city Id!");
+            }
+
+            return city;
         }
     }
 }

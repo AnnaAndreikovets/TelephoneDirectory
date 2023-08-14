@@ -1,11 +1,12 @@
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
 
 namespace TelephoneDirectory.Data.Models
 {
     public class City
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        [BindRequired]
+        [Required]
+        public int Id { get; set; }
+        [Required]
         public string CityName { get; set; } = null!;
     }
 }
