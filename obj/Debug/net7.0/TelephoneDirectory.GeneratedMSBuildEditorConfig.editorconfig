@@ -15,3 +15,15 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = c:\Ann\Scripts\TelephoneDirectory
 build_property._RazorSourceGeneratorDebug = 
+
+[c:/Ann/Scripts/TelephoneDirectory/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Ann/Scripts/TelephoneDirectory/Views/ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Ann/Scripts/TelephoneDirectory/Views/ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

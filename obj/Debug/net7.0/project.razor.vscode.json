@@ -24030,6 +24030,16 @@
       "FilePath": "c:\\Ann\\Scripts\\TelephoneDirectory\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Ann\\Scripts\\TelephoneDirectory\\Views\\ViewImports.cshtml",
+      "TargetPath": "Views\\ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Ann\\Scripts\\TelephoneDirectory\\Views\\ViewStart.cshtml",
+      "TargetPath": "Views\\ViewStart.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }

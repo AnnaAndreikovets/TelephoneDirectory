@@ -19,6 +19,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseMvc(routes => {
+    routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+});
+
 using(var scope = app.Services.CreateScope())
 {
     ApplicationDbContext content = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>()!;
