@@ -43,6 +43,11 @@ namespace TelephoneDirectory.Controllers
             {
                 return View(person);
             }
+            
+            if(people.GetPeople(person).Count() != 0)
+            {
+                return RedirectToAction("Message", new { message = "Unable to update. The data matches an already existing person!" });
+            }
 
             await people.UpdatePersonAsync(id, person);
 
@@ -58,6 +63,11 @@ namespace TelephoneDirectory.Controllers
             if (!ModelState.IsValid)
             {
                 return View(person);
+            }
+
+            if(people.GetPeople(person).Count() != 0)
+            {
+                return RedirectToAction("Message", new { message = "Failed to add. The data matches an already existing person!" });
             }
 
             await people.AddPersonAsync(person);
