@@ -17,21 +17,6 @@ namespace TelephoneDirectory.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
 
-            modelBuilder.Entity("TelephoneDirectory.Data.Models.City", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CityName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("City");
-                });
-
             modelBuilder.Entity("TelephoneDirectory.Data.Models.Person", b =>
                 {
                     b.Property<Guid>("PersonId")
@@ -40,9 +25,6 @@ namespace TelephoneDirectory.Migrations
 
                     b.Property<int?>("Building")
                         .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("CityId")
-                        .HasColumnType("TEXT");
 
                     b.Property<int?>("Flat")
                         .HasColumnType("INTEGER");
@@ -64,20 +46,7 @@ namespace TelephoneDirectory.Migrations
 
                     b.HasKey("PersonId");
 
-                    b.HasIndex("CityId");
-
-                    b.ToTable("Person");
-                });
-
-            modelBuilder.Entity("TelephoneDirectory.Data.Models.Person", b =>
-                {
-                    b.HasOne("TelephoneDirectory.Data.Models.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("City");
+                    b.ToTable("People");
                 });
 #pragma warning restore 612, 618
         }

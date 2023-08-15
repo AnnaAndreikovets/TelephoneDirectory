@@ -17,8 +17,5 @@ namespace TelephoneDirectory.Data.Models
         public int House { get; set; }
         public int? Building  { get; set; }
         public int? Flat { get; set; }
-
-        [BindRequired]
-        public City City { get; set; } = null!;
     }
 }

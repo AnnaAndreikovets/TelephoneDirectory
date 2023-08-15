@@ -7,37 +7,28 @@ namespace TelephoneDirectory.Data.Repository
     public class PersonRepository : IPerson
     {
         readonly ApplicationDbContext context;
-        readonly ICity city;
 
-        public PersonRepository(ApplicationDbContext context, ICity city)
+        public PersonRepository(ApplicationDbContext context) => this.context = context;
+
+        public async Task AddPerson(Person person)
         {
-            this.context = context;
-            this.city = city;
-        }
-
-        public async Task Add(string phone, string surname, string initials, int house, int? building, int? flat, int cityId)
-        {
-            City city_ = city.Get(cityId);
-
-            Person person = new Person() {Phone = phone, Surname = surname, Initials = initials, House = house, Building = building, Flat = flat, City = city_};
-
-            await context.Person.AddAsync(person);
+            await context.People.AddAsync(person);
 
             await context.SaveChangesAsync();
         }
 
-        public async Task Delete(Guid id)
+        public async Task DeletePerson(Guid id)
         {
-            Person person = Get(id);
+            Person person = GetPerson(id);
 
-            context.Person.Remove(person);
+            context.People.Remove(person);
 
             await context.SaveChangesAsync();
         }
 
-        public Person Get(Guid id)
+        public Person GetPerson(Guid id)
         {
-            Person? person = context.Person.FirstOrDefault(p => p.PersonId.CompareTo(id) == 0);
+            Person? person = context.People.FirstOrDefault(p => p.PersonId.CompareTo(id) == 0);
 
             if(person is null)
             {
@@ -47,28 +38,46 @@ namespace TelephoneDirectory.Data.Repository
             return person;
         }
 
-        public async Task Update(Guid id, string phone, string surname, string initials, int house, int? building, int? flat, int cityId)
+        public List<Person> GetPeople(Person person)
         {
-            Person person = Get(id);
-            
-            context.Entry(person).State = EntityState.Modified;
+            //получить пользователя соотвественно данным переданного человека
+            return context.People.ToList();
+        }
 
-            City city_ = city.Get(cityId);
-
-            person.Phone = phone;
-            person.Surname = surname;
-            person.Initials = initials;
-            person.House = house;
-            person.City = city_;
+        public async Task UpdatePerson(Guid id, Person person)
+        {
+            Person personOld = GetPerson(id);
             
-            if(building is not null)
+            context.Entry(personOld).State = EntityState.Modified;
+
+            if(personOld.Phone != person.Phone)
             {
-                person.Building = building;
+                personOld.Phone = person.Phone;
             }
 
-            if(flat is not null)
+            if(personOld.Surname != person.Surname)
             {
-                person.Flat = flat;
+                personOld.Surname = person.Surname;
+            }
+
+            if(personOld.Initials != person.Initials)
+            {
+                personOld.Initials = person.Initials;
+            }
+
+            if(personOld.House != person.House)
+            {
+                personOld.House = person.House;
+            }
+            
+            if(person.Building is not null)
+            {
+                personOld.Building = person.Building;
+            }
+
+            if(person.Flat is not null)
+            {
+                personOld.Flat = person.Flat;
             }
 
             await context.SaveChangesAsync();

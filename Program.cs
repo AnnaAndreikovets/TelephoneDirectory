@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
-builder.Services.AddTransient<ICity, CityRepository>();
 builder.Services.AddTransient<IPerson, PersonRepository>();
 
 var app = builder.Build();
@@ -20,7 +19,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseMvc(routes => {
-    routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+    routes.MapRoute(name: "default", template: "{controller=Home}/{action=Search}/{id?}");
 });
 
 using(var scope = app.Services.CreateScope())

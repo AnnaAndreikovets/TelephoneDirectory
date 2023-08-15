@@ -1,0 +1,36 @@
+<div class="text-center block-blank">
+    <form class="form-login" action="/Home/Table" method="post" enctype="multipart/form-data">
+      <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+      
+      <label for="phone" class="sr-only">Phone:</label>
+      <input type="tel" id="phone" class="form-control" placeholder="+77123456788" name="phone" pattern="+[0-9]{3}-[0-9]{3}-[0-9]{4}">
+      <br/>
+
+      <label for="surname" class="sr-only">Surname:</label>
+      <input type="text" id="surname" class="form-control" placeholder="Surname" name="surname">
+
+      <br/>
+
+      <label for="initials" class="sr-only">Initials:</label>
+      <input type="text" id="initials" class="form-control" placeholder="Asmat Sashin (A.S.)" name="initials" pattern="[A-Za-z]\.[A-Za-z]\." style="text-transform:uppercase;">
+
+      <br/>
+
+      <label for="house" class="sr-only">House:</label>
+      <input type="number" id="house" class="form-control" placeholder="House" name="house">
+
+      <br/>
+
+      <label for="building" class="sr-only">Building:</label>
+      <input type="number" id="building" class="form-control" placeholder="Building" name="building">
+
+      <br/>
+
+      <label for="flat" class="sr-only">Flat:</label>
+      <input type="number" id="flat" class="form-control" placeholder="Flat" name="flat">
+
+      <br/>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+    </form>
+</div>
