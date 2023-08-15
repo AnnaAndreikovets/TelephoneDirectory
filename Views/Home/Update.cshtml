@@ -1,0 +1,42 @@
+@model Person
+
+<div class="text-center block-blank">
+    <form class="form-login" action="/Home/UpdatePerson" method="post" enctype="multipart/form-data">
+      <h1 class="h3 mb-3 font-weight-normal">Update information about @Model.Surname</h1>
+      
+      <label for="phone" class="sr-only">Phone:</label>
+      <input type="tel" id="phone" class="form-control" placeholder="@Model.Phone" name="phone" pattern="+[0-9]{3}-[0-9]{3}-[0-9]{4}" value="@Model.Phone" required>
+      <br/>
+
+      <label for="surname" class="sr-only">Surname:</label>
+      <input type="text" id="surname" class="form-control" placeholder="@Model.Surname" name="surname" value="@Model.Surname" required>
+
+      <br/>
+
+      <label for="initials" class="sr-only">Initials:</label>
+      <input type="text" id="initials" class="form-control" placeholder="@Model.Initials" name="initials" pattern="[A-Za-z]\.[A-Za-z]\." style="text-transform:uppercase;" value="@Model.Initials" required>
+
+      <br/>
+
+      <label for="house" class="sr-only">House:</label>
+      <input type="number" id="house" class="form-control" placeholder="@Model.House" name="house" value="@Model.House" required>
+
+      <br/>
+
+      <label for="building" class="sr-only">Building:</label>
+      <input type="number" id="building" class="form-control" placeholder="@Model.Building" name="building" value="@Model.Building">
+
+      <br/>
+
+      <label for="flat" class="sr-only">Flat:</label>
+      <input type="number" id="flat" class="form-control" placeholder="@Model.Flat" name="flat" value="@Model.Flat">
+
+      <br/>
+
+      <input type="hidden" name="id" value="@Model.PersonId" />
+      <button class="btn btn-secondary" type="submit">Update</button>
+      <span>
+      <input class="btn btn-secondary" type="button" onclick="window.location.href = '/Home/Message/Update canceled!';" value="Cancel"/>
+      </span>
+    </form>
+</div>

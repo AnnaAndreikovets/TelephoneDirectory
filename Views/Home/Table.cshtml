@@ -4,33 +4,39 @@
     int count = @Model.Count() > 30 ? 30 : @Model.Count();
 }
 
-<div class="text-center block-blank">
+<div class="text-center">
     <table class="table">
         <thead>
             <tr>
-              <th scope="col">№</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Surname</th>
-              <th scope="col">Initials</th>
-              <th scope="col">House</th>
-              <th scope="col">Building</th>
-              <th scope="col">Flat</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
+               <th scope="col">№</th>
+               <th scope="col">Phone</th>
+               <th scope="col">Surname</th>
+               <th scope="col">Initials</th>
+               <th scope="col">House</th>
+               <th scope="col">Building</th>
+               <th scope="col">Flat</th>
+               <th scope="col"></th>
+               <th scope="col"></th>
             </tr>
         </thead>
         @for(int i = 0; i < count; i++){
         <tbody>
             <tr>
-              <th scope="row">@(i + 1)</th>
-              <td>@Model[i].Phone</td>
-              <td>@Model[i].Surname</td>
-              <td>@Model[i].Initials</td>
-              <td>@Model[i].House</td>
-              <td>@Model[i].Building</td>
-              <td>@Model[i].Flat</td>
-              <td><button type="button" class="btn btn-secondary" action="/Home/Delete/@Model[i].PersonId">Delete</button></td>
-              <td><button type="button" class="btn btn-secondary" action="/Home/Update/@Model[i].PersonId">Update</button></td>
+               <th scope="row">@(i + 1)</th>
+               <td>@Model[i].Phone</td>
+               <td>@Model[i].Surname</td>
+               <td>@Model[i].Initials</td>
+               <td>@Model[i].House</td>
+               <td>@Model[i].Building</td>
+               <td>@Model[i].Flat</td>
+               <form action="/Home/Delete">
+                    <input type="hidden" name="id" value="@Model[i].PersonId" />
+                    <td><p><button type="submit" class="btn btn-secondary">Delete</button></td>
+                </form>
+                <form action="/Home/Update">
+                    <input type="hidden" name="id" value="@Model[i].PersonId" />
+                    <td><p><button type="submit" class="btn btn-secondary">Update</button></td>
+                </form>
             </tr>
         </tbody>
         }

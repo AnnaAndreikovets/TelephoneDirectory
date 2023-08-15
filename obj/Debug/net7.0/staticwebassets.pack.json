@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Ann\\Scripts\\TelephoneDirectory\\wwwroot\\css\\container.css",
+      "PackagePath": "staticwebassets\\css\\container.css"
+    },
+    {
       "Id": "C:\\Ann\\Scripts\\TelephoneDirectory\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },

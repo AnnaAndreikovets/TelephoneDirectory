@@ -1,9 +1,9 @@
 <div class="text-center block-blank">
-    <form class="form-login" action="/Home/Table" method="get" enctype="multipart/form-data">
-      <h1 class="h3 mb-3 font-weight-normal">Telephone directory of Almaty (Kazakhstan)</h1>
+    <form class="form-login" action="/Home/AddPerson" method="post" enctype="multipart/form-data">
+      <h1 class="h3 mb-3 font-weight-normal">Adding a person!</h1>
       
       <label for="phone" class="sr-only">Phone:</label>
-      <input type="tel" id="phone" class="form-control" placeholder="+77123456788" name="phone" pattern="+[0-9]{3}-[0-9]{3}-[0-9]{4}">
+      <input type="tel" id="phone" class="form-control" placeholder="+77123456788" name="phone" pattern="+[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
       <br/>
 
       <label for="surname" class="sr-only">Surname:</label>
@@ -12,12 +12,12 @@
       <br/>
 
       <label for="initials" class="sr-only">Initials:</label>
-      <input type="text" id="initials" class="form-control" placeholder="Asmat Sashin (A.S.)" name="initials" pattern="[A-Za-z]\.[A-Za-z]\." style="text-transform:uppercase;">
+      <input type="text" id="initials" class="form-control" placeholder="Asmat Sashin (A.S.)" name="initials" pattern="[A-Za-z]\.[A-Za-z]\." style="text-transform:uppercase;" required>
 
       <br/>
 
       <label for="house" class="sr-only">House:</label>
-      <input type="number" id="house" class="form-control" placeholder="House" name="house">
+      <input type="number" id="house" class="form-control" placeholder="House" name="house" required>
 
       <br/>
 
@@ -31,6 +31,6 @@
 
       <br/>
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
     </form>
 </div>

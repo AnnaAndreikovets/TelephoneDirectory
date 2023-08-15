@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YigjoVvjbZ63jMyqTSF3bpUwa6LVNxZejWXvUEuOJ3g=",
+  "Hash": "rLqvjln8ncNTL5lRQrKepq4V+s0E3mh1Jd/qVV0Kd6U=",
   "Source": "TelephoneDirectory",
   "BasePath": "_content/TelephoneDirectory",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Ann\\Scripts\\TelephoneDirectory\\wwwroot\\css\\container.css",
+      "SourceId": "TelephoneDirectory",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Ann\\Scripts\\TelephoneDirectory\\wwwroot\\",
+      "BasePath": "_content/TelephoneDirectory",
+      "RelativePath": "css/container.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\container.css"
     },
     {
       "Identity": "C:\\Ann\\Scripts\\TelephoneDirectory\\wwwroot\\css\\style.css",
