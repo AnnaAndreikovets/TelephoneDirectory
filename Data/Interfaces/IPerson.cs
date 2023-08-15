@@ -4,10 +4,10 @@ namespace TelephoneDirectory.Data.Interfaces
 {
     public interface IPerson
     {
-        public Task AddPersonAsync(Person person);
-        public Person GetPerson(Guid id);
-        public List<Person> GetPeople(Person person);
-        public Task UpdatePersonAsync(Guid id, Person person);
-        public Task DeletePersonAsync(Guid id);
+        Task AddPersonAsync(Person person);
+        Person GetPerson(Guid id);
+        List<Person> GetPeople(Person person);
+        Task UpdatePersonAsync(Guid id, Person person);
+        Task DeletePersonAsync(Guid id);
     }
 }

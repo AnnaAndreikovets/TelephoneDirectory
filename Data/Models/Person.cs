@@ -5,6 +5,7 @@ namespace TelephoneDirectory.Data.Models
 {
     public class Person
     {
+        [Key]
         public Guid PersonId { get; set; } = Guid.NewGuid();
         [BindRequired]
         [DataType(DataType.PhoneNumber)]
@@ -16,6 +17,6 @@ namespace TelephoneDirectory.Data.Models
         [BindRequired]
         public int? House { get; set; }
         public int? Building { get; set; }
-        public int? Flat { get; set; }
+        public int? Flat { get; set; }       
     }
 }

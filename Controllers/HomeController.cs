@@ -10,31 +10,10 @@ namespace TelephoneDirectory.Controllers
 
         public HomeController(IPerson people) => this.people = people;
 
+        [HttpGet]
         public IActionResult Search() => View();
 
-        public IActionResult Update(Guid id)
-        {
-            var person = people.GetPerson(id);
-
-            return View(person);
-        }
-
-        public async Task<IActionResult> UpdatePerson(Guid id, Person person)
-        {
-            await people.UpdatePersonAsync(id, person);
-
-            return RedirectToAction("Message", new { message = "Update was successful!" });
-        }
-
-        public IActionResult Add() => View();
-
-        public async Task<IActionResult> AddPerson(Person person)
-        {
-            await people.AddPersonAsync(person);
-
-            return RedirectToAction("Message", new { message = "Information successfully added!" });
-        }
-        
+        [HttpGet]
         public IActionResult Table(Person person)
         {
             var people = this.people.GetPeople(person);
@@ -49,6 +28,44 @@ namespace TelephoneDirectory.Controllers
             return RedirectToAction("Message", new { message = "Information successfully removed!" });
         }
 
+        [HttpGet]
+        public IActionResult Update(Guid id)
+        {
+            var person = people.GetPerson(id);
+
+            return View(person);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(Guid id, Person person)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(person);
+            }
+
+            await people.UpdatePersonAsync(id, person);
+
+            return RedirectToAction("Message", new { message = "Update was successful!" });
+        }
+
+        [HttpGet]
+        public IActionResult Add() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> Add(Person person)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(person);
+            }
+
+            await people.AddPersonAsync(person);
+
+            return RedirectToAction("Message", new { message = "Information successfully added!" });
+        }
+
+        [HttpGet]
         [Route("/Home/Message/{message}")]
         public IActionResult Message(string message)
         {

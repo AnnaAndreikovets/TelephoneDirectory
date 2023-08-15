@@ -3,11 +3,11 @@
       <h1 class="h3 mb-3 font-weight-normal">Telephone directory of Almaty (Kazakhstan)</h1>
       
       <label for="phone" class="sr-only">Phone:</label>
-      <input type="tel" id="phone" class="form-control" placeholder="+77123456788" name="phone" pattern="+[0-9]{3}-[0-9]{3}-[0-9]{4}">
+      <input type="tel" id="phone" class="form-control" placeholder="+77123456788" name="phone" pattern="\+[0-9]{11}">
       <br/>
 
       <label for="surname" class="sr-only">Surname:</label>
-      <input type="text" id="surname" class="form-control" placeholder="Surname" name="surname">
+      <input type="text" id="surname" class="form-control" placeholder="Surname" name="surname" pattern="^[a-zA-Z]+$">
 
       <br/>
 
@@ -17,17 +17,17 @@
       <br/>
 
       <label for="house" class="sr-only">House:</label>
-      <input type="number" id="house" class="form-control" placeholder="House" name="house">
+      <input type="number" id="house" class="form-control" placeholder="House" name="house" min="1">
 
       <br/>
 
       <label for="building" class="sr-only">Building:</label>
-      <input type="number" id="building" class="form-control" placeholder="Building" name="building">
+      <input type="number" id="building" class="form-control" placeholder="Building" name="building" min="1">
 
       <br/>
 
       <label for="flat" class="sr-only">Flat:</label>
-      <input type="number" id="flat" class="form-control" placeholder="Flat" name="flat">
+      <input type="number" id="flat" class="form-control" placeholder="Flat" name="flat" min="1">
 
       <br/>
 

@@ -11,12 +11,14 @@ builder.Services.AddTransient<IPerson, PersonRepository>();
 
 var app = builder.Build();
 
-app.UseExceptionHandler("/Error");
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseExceptionHandler( new ExceptionHandlerOptions() {
+    AllowStatusCode404Response = true,
+    ExceptionHandlingPath = "/Error"                  
+}); 
 
 app.UseMvc(routes => {
     routes.MapRoute(name: "default", template: "{controller=Home}/{action=Search}/{id?}");

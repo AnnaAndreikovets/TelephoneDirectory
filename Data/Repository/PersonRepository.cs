@@ -78,7 +78,7 @@ namespace TelephoneDirectory.Data.Repository
         public async Task UpdatePersonAsync(Guid id, Person person)
         {
             Person personOld = GetPerson(id);
-            //проверить на валидность и что они не пустые
+            
             context.Entry(personOld).State = EntityState.Modified;
 
             if(personOld.Phone != person.Phone)
@@ -101,12 +101,12 @@ namespace TelephoneDirectory.Data.Repository
                 personOld.House = person.House;
             }
             
-            if(person.Building is not null)
+            if(personOld.Building != person.Building)
             {
                 personOld.Building = person.Building;
             }
 
-            if(person.Flat is not null)
+            if(personOld.Flat != person.Flat)
             {
                 personOld.Flat = person.Flat;
             }
