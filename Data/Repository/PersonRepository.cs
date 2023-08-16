@@ -32,12 +32,12 @@ namespace TelephoneDirectory.Data.Repository
         {
             IEnumerable<Person> people = context.People.Include(c => c.City);
 
-            if(person.Phone is not null)
+            if(person.Phone is not null && people.Count() > 0)
             {
                 people = people.Where(p => p.Phone!.Equals(person.Phone));
             }
             
-            if(!string.IsNullOrWhiteSpace(person.Surname) && people.Count() > 0)
+            if(person.Surname is not null && people.Count() > 0)
             {
                 people = people.Where(p => p.Surname!.Equals(person.Surname));
             }
@@ -73,8 +73,6 @@ namespace TelephoneDirectory.Data.Repository
         public async Task UpdatePersonAsync(Guid id, Person person)
         {
             Person personOld = GetPerson(id);
-            
-            context.Entry(personOld).State = EntityState.Modified;
 
             if(personOld.Phone != person.Phone)
             {

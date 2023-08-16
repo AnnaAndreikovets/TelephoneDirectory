@@ -13,7 +13,6 @@ builder.Services.AddMvc(options => {
     });
 builder.Services.AddTransient<IPerson, PersonRepository>();
 
-
 var app = builder.Build();
 
 app.UseHttpsRedirection();
