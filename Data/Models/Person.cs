@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TelephoneDirectory.Data.Models
 {
@@ -17,6 +18,10 @@ namespace TelephoneDirectory.Data.Models
         [BindRequired]
         public int? House { get; set; }
         public int? Building { get; set; }
-        public int? Flat { get; set; }       
+        public int? Flat { get; set; }
+
+        [ForeignKey("City")]
+        public Guid CityId { get; set; }
+        public City City { get; set; } = null!;
     }
 }

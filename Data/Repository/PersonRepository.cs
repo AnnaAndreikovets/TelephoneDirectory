@@ -26,21 +26,11 @@ namespace TelephoneDirectory.Data.Repository
             await context.SaveChangesAsync();
         }
 
-        public Person GetPerson(Guid id)
-        {
-            Person? person = context.People.FirstOrDefault(p => p.PersonId.CompareTo(id) == 0);
-
-            if(person is null)
-            {
-                throw new ArgumentNullException("Wrong person Id!");
-            }
-
-            return person;
-        }
+        public Person GetPerson(Guid id) => context.People.Include(p => p.City).FirstOrDefault(p => p.PersonId.CompareTo(id) == 0) ?? throw new KeyNotFoundException("Wrong person Id!");
 
         public List<Person> GetPeople(Person person)
         {
-            IEnumerable<Person> people = context.People;
+            IEnumerable<Person> people = context.People.Include(c => c.City);
 
             if(person.Phone is not null)
             {
@@ -70,6 +60,11 @@ namespace TelephoneDirectory.Data.Repository
             if(person.Flat is not null && people.Count() > 0)
             {
                 people = people.Where(p => p.Flat == person.Flat);
+            }
+
+            if(person.City.CityName != "None" && people.Count() > 0)
+            {
+                people = people.Where(p => p.City.CityName.Equals(person.City.CityName));
             }
 
             return people.ToList();
@@ -109,6 +104,15 @@ namespace TelephoneDirectory.Data.Repository
             if(personOld.Flat != person.Flat)
             {
                 personOld.Flat = person.Flat;
+            }
+            
+            string name = person.City.CityName;
+            City city = context.City.FirstOrDefault(c => c.CityName == name) ?? throw new ArgumentNullException("Wrong city name!");
+
+            if (personOld.City.CityName != name)
+            {
+                personOld.CityId = city.Id;
+                personOld.City.CityName = name;
             }
 
             await context.SaveChangesAsync();

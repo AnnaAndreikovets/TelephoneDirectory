@@ -15,6 +15,7 @@
                <th scope="col">House</th>
                <th scope="col">Building</th>
                <th scope="col">Flat</th>
+               <th scope="col">City</th>
                <th scope="col"></th>
                <th scope="col"></th>
             </tr>
@@ -29,6 +30,7 @@
                <td>@Model[i].House</td>
                <td>@Model[i].Building</td>
                <td>@Model[i].Flat</td>
+               <td>@Model[i].City!.CityName</td>
                <form action="/Home/Delete">
                     <input type="hidden" name="id" value="@Model[i].PersonId" />
                     <td><p><button type="submit" class="btn btn-secondary">Delete</button></td>

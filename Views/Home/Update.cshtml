@@ -4,33 +4,35 @@
     <form class="form-login" action="/Home/Update" method="post" enctype="multipart/form-data">
       <h1 class="h3 mb-3 font-weight-normal">Update information about @Model.Surname</h1>
       
-      <label for="phone" class="sr-only">Phone:</label>
       <input type="tel" id="phone" class="form-control" placeholder="@Model.Phone (!)" name="phone" pattern="\+[0-9]{11}" value="@Model.Phone" required>
       <br/>
-
-      <label for="surname" class="sr-only">Surname:</label>
       <input type="text" id="surname" class="form-control" placeholder="@Model.Surname (!)" name="surname" pattern="^[a-zA-Z]+$" value="@Model.Surname" required>
-
       <br/>
-
-      <label for="initials" class="sr-only">Initials:</label>
       <input type="text" id="initials" class="form-control" placeholder="@Model.Initials (!)" name="initials" pattern="[A-Za-z]\.[A-Za-z]\." style="text-transform:uppercase;" value="@Model.Initials" required>
-
       <br/>
-
-      <label for="house" class="sr-only">House:</label>
       <input type="number" id="house" class="form-control" placeholder="@Model.House (!)" name="house" value="@Model.House" min="1" required>
-
       <br/>
-
-      <label for="building" class="sr-only">Building:</label>
       <input type="number" id="building" class="form-control" placeholder="@Model.Building" name="building" value="@Model.Building" min="1">
-
       <br/>
-
-      <label for="flat" class="sr-only">Flat:</label>
       <input type="number" id="flat" class="form-control" placeholder="@Model.Flat" name="flat" value="@Model.Flat" min="1">
-
+      <br/>
+      <select class="form-control" id="city" name="City.CityName">
+        @if (Model.City.CityName == "Almaty"){ <option value="Almaty" selected>Almaty</option> } else { <option value="Almaty">Almaty</option> }
+        @if (Model.City.CityName == "Nur-Sultan"){ <option value="Nur-Sultan" selected>Nur-Sultan</option> } else { <option value="Nur-Sultan">Nur-Sultan</option> }
+        @if (Model.City.CityName == "Shymkent"){ <option value="Shymkent" selected>Shymkent</option> } else { <option value="Shymkent">Shymkent</option> }
+        @if (Model.City.CityName == "Karaganda"){ <option value="Karaganda">Karaganda</option> } else { <option value="Karaganda">Karaganda</option> }
+        @if (Model.City.CityName == "Aktobe"){ <option value="Aktobe">Aktobe</option> } else { <option value="Aktobe">Aktobe</option> }
+        @if (Model.City.CityName == "Taraz"){ <option value="Taraz">Taraz</option> } else { <option value="Taraz">Taraz</option> }
+        @if (Model.City.CityName == "Pavlodar"){ <option value="Pavlodar">Pavlodar</option> } else { <option value="Pavlodar">Pavlodar</option> }
+        @if (Model.City.CityName == "Ust-Kamenogorsk"){ <option value="Ust-Kamenogorsk">Ust-Kamenogorsk</option> } else { <option value="Ust-Kamenogorsk">Ust-Kamenogorsk</option> }
+        @if (Model.City.CityName == "Semey"){ <option value="Semey">Semey</option> } else { <option value="Semey">Semey</option> }
+        @if (Model.City.CityName == "Oral"){ <option value="Oral">Oral</option> } else { <option value="Oral">Oral</option> }
+        @if (Model.City.CityName == "Kostanay"){ <option value="Kostanay">Kostanay</option> } else { <option value="Kostanay">Kostanay</option> }
+        @if (Model.City.CityName == "Kyzylorda"){ <option value="Kyzylorda">Kyzylorda</option> } else { <option value="Kyzylorda">Kyzylorda</option> }
+        @if (Model.City.CityName == "Petropavl"){ <option value="Petropavl">Petropavl</option> } else { <option value="Petropavl">Petropavl</option> }
+        @if (Model.City.CityName == "Atyrau"){ <option value="Atyrau">Atyrau</option> } else { <option value="Atyrau">Atyrau</option> }
+        @if (Model.City.CityName == "Temirtau"){ <option value="Temirtau">Temirtau</option> } else { <option value="Temirtau">Temirtau</option> }
+      </select>
       <br/>
 
       <input type="hidden" name="id" value="@Model.PersonId" />

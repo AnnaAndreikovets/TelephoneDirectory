@@ -11,7 +11,7 @@ using TelephoneDirectory.Data;
 namespace TelephoneDirectory.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230815064035_Initial")]
+    [Migration("20230816070330_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -19,6 +19,21 @@ namespace TelephoneDirectory.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
+
+            modelBuilder.Entity("TelephoneDirectory.Data.Models.City", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CityName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("City");
+                });
 
             modelBuilder.Entity("TelephoneDirectory.Data.Models.Person", b =>
                 {
@@ -29,27 +44,40 @@ namespace TelephoneDirectory.Migrations
                     b.Property<int?>("Building")
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid>("CityId")
+                        .HasColumnType("TEXT");
+
                     b.Property<int?>("Flat")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("House")
+                    b.Property<int?>("House")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Initials")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonId");
 
+                    b.HasIndex("CityId");
+
                     b.ToTable("People");
+                });
+
+            modelBuilder.Entity("TelephoneDirectory.Data.Models.Person", b =>
+                {
+                    b.HasOne("TelephoneDirectory.Data.Models.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 #pragma warning restore 612, 618
         }
