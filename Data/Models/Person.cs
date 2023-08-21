@@ -18,12 +18,9 @@ namespace TelephoneDirectory.Data.Models
         [RegularExpression(@"[A-Za-z]\.[A-Za-z]\.")]
         public string? Initials { get; set; }
         [BindRequired]
-        [Range(1, int.MaxValue)]
-        public int? House { get; set; }
-        [Range(1, int.MaxValue)]
-        public int? Building { get; set; }
-        [Range(1, int.MaxValue)]
-        public int? Flat { get; set; }
+        public uint? House { get; set; }
+        public uint? Building { get; set; }
+        public uint? Flat { get; set; }
 
         [ForeignKey("City")]
         public Guid CityId { get; set; }

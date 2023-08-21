@@ -63,12 +63,12 @@ namespace TelephoneDirectory.Data
                     new Person() { Phone = "+77282828282", Surname = "Bekbolov", Initials = "Y.H.", House = 13, Building = 2, Flat = 9, City = cities[9] },
                     new Person() { Phone = "+77272727272", Surname = "Ertayev", Initials = "E.U.", House = 4, Building = 5, Flat = 34, City = cities[8] },
                     new Person() { Phone = "+77262626262", Surname = "Suleimenov", Initials = "I.L.", House = 3, Building = 5, Flat = 2, City = cities[7] },
-                });
-
-                if(!context.City.Any())
-                {
-                    context.City.AddRange(cities);
-                }
+                });                
+            }
+            
+            if(!context.City.Any())
+            {
+                context.City.AddRange(cities);
             }
 
             context.SaveChanges();

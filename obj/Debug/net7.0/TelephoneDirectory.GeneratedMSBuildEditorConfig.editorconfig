@@ -9,41 +9,41 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TelephoneDirectory
 build_property.RootNamespace = TelephoneDirectory
-build_property.ProjectDir = C:\Ann\Scripts\TelephoneDirectory\
+build_property.ProjectDir = c:\Ann\Scripts\TelephoneDirectory\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Ann\Scripts\TelephoneDirectory
+build_property.MSBuildProjectDirectory = c:\Ann\Scripts\TelephoneDirectory
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/Home/Add.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/Home/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/Home/Message.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/Home/Message.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/Home/Search.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/Home/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/Home/Table.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/Home/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/Home/Update.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/Home/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/Shared/_Layout.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/_ViewImports.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Ann/Scripts/TelephoneDirectory/Views/_ViewStart.cshtml]
+[c:/Ann/Scripts/TelephoneDirectory/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
